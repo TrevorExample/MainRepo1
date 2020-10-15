@@ -1,0 +1,125 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.questionNumber }}</td>
+      <td>{{ forecast.question }}</td>
+      <td>{{ forecast.answer }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<table>
+  <thead>
+    <tr>
+      <th>Question Number</th>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forcast of forecasts;  let i=index">
+      {{i+1}} {{forcast.answer}}
+      <td>{{ forecast.questionNumber }}</td>
+      <td>{{ forecast.question }}</td>
+      <td>{{ forecast.answer }}</td>
+    </tr>
+  </tbody>
+</table>-->
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Question Number</th>
+      <!--<th>Question</th>-->
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forcast of forecasts;  let i=index">
+      <td *ngIf="i==myVar"> {{forcast.questionNumber}}</td>
+      <td *ngIf="i==myVar"> {{forcast.question}}</td>
+    </tr>
+    <!--<tr *ngFor="let forcast of forecasts;  let i=index">
+
+    </tr>-->
+    <!--<tr *ngFor="let forcast of forecasts;  let i=index">
+      <td *ngIf="i==myVar"> {{forcast.answer}}</td>
+    </tr>
+    <tr *ngFor="let forcast of forecasts;  let i=index">
+      <td *ngIf="i==myVar"> {{forcast.answer2}}</td>
+    </tr>
+    <tr *ngFor="let forcast of forecasts;  let i=index">
+      <td *ngIf="i==myVar"> {{forcast.answer3}}</td>
+    </tr>-->
+
+  </tbody>
+</table>
+
+
+
+<form #myForm="ngForm" (submit)="templateForm(myForm.value)" novalidate>
+
+  <div *ngFor="let forcast of forecasts;  let i=index">
+    <input *ngIf="i==myVar" id="male" type="radio" value={{forcast.answer}} name="gender" [(ngModel)]="gender">
+    <label *ngIf="i==myVar" for="male">{{forcast.answer}}</label>
+  </div>
+
+  <div *ngFor="let forcast of forecasts;  let i=index">
+    <input *ngIf="i==myVar" id="male2" type="radio" value={{forcast.answer2}} name="gender" [(ngModel)]="gender">
+    <label *ngIf="i==myVar" for="male2">{{forcast.answer2}}</label>
+  </div>
+
+  <div *ngFor="let forcast of forecasts;  let i=index">
+    <input *ngIf="i==myVar" id="male3" type="radio" value={{forcast.answer3}} name="gender" [(ngModel)]="gender">
+    <label *ngIf="i==myVar" for="male3">{{forcast.answer3}}</label>
+  </div>
+
+  <div>
+    <input id="femalee" type="radio" value="femalee" name="gender" ngModel>
+    <label for="femalee">Femaleeee</label>
+  </div>
+
+  <div *ngIf="isSubmitted && myForm.invalid">
+    <p>Please select either value</p>
+  </div>
+
+  <button type="submit">checkAnswer</button>
+</form>
+
+
+<button (click)="clickEvent()">
+  Click Me
+</button>
+
+<button (click)="clickEvent2()">
+  Click Me2
+</button>
+
+
+<button (click)="clickEvent3()">
+  Click Me3
+</button>
+
+<button class="nav-item" [routerLinkActive]="['link-active']" (click)="clickEvent3()" [routerLink]="['/questions-score']">
+</button>
+
+<li class="nav-item" [routerLinkActive]="['link-active']">
+  <a class="nav-link text-dark" [routerLink]="['/questions-score']">questions-score</a>
+</li>
+
+<button (click)="gotoProductDetails('/questions-score',1)">Go To Details</button>
