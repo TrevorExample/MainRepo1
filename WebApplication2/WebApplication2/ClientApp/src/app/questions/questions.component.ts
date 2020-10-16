@@ -35,6 +35,9 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
 
+
+  
+
   }
 
   myVar = 0;
@@ -116,6 +119,13 @@ export class QuestionsComponent implements OnInit {
 
   }
 
+  clickEvent4() {
+    this.apiService.createRole(this.input)
+      .subscribe(data => {
+        alert("done")
+
+      })
+  }
 
 
   public gotoProductDetails(url) {

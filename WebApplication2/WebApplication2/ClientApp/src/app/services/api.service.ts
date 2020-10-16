@@ -14,7 +14,12 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
+  createRole(input: string): Observable<any> {
+    const headers = { 'content-type': 'application/json' }
+    const body = JSON.stringify(input);
 
+    return this.http.post(this.url + 'role/CreateRole', body,{ 'headers': headers });
+  }
 
   UpdateUser(input: string): Observable<any> {
     const headers = { 'content-type': 'application/json' }
