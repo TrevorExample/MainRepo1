@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mnguyen\\Downloads\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj": {}
+    "C:\\working2\\MainRepo1\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mnguyen\\Downloads\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj": {
+    "C:\\working2\\MainRepo1\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mnguyen\\Downloads\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj",
+        "projectUniqueName": "C:\\working2\\MainRepo1\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj",
         "projectName": "ASPNETCoreUserIdentity",
-        "projectPath": "C:\\Users\\mnguyen\\Downloads\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj",
+        "projectPath": "C:\\working2\\MainRepo1\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj",
         "packagesPath": "C:\\Users\\mnguyen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mnguyen\\Downloads\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\obj\\",
+        "outputPath": "C:\\working2\\MainRepo1\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mnguyen\\AppData\\Roaming\\NuGet\\NuGet.Config",

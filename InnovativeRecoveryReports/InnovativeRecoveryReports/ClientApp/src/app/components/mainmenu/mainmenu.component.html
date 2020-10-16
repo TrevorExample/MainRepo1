@@ -1,0 +1,52 @@
+
+
+<div class="d-flex " style="float: left; display: inline-block; ">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+    <li ngbNavItem="Search">
+      <a ngbNavLink>Search</a>
+      <ng-template ngbNavContent></ng-template>
+
+
+    </li>
+    <li ngbNavItem="addNewFile">
+      <a ngbNavLink>Add New File</a>
+      <ng-template ngbNavContent>
+        <p>
+          Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+          farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+          ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+          helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+          8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+          stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+        </p>
+      </ng-template>
+    </li>
+
+    <li ngbNavItem="updateExistingFile">
+      <a ngbNavLink>Update Existing File</a>
+      <ng-template ngbNavContent>
+
+      </ng-template>
+    </li>
+
+
+    <li ngbNavItem="placement">
+      <a ngbNavLink>Placement</a>
+      <ng-template ngbNavContent>
+        <app-placement></app-placement>
+      </ng-template>
+    </li>
+
+    <li ngbNavItem="manageUsers">
+      <a ngbNavLink>Manage Users</a>
+      <ng-template ngbNavContent>
+  
+      </ng-template>
+    </li>
+
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="ml-4"></div>
+</div>
+
+

@@ -1,0 +1,40 @@
+
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>ClientNumber</th>
+      <th>ManagementNumber</th>
+      <th>Community</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>SSN</th>
+      <th>TenantCode</th>
+      <th>ListedDate</th>
+      <th>MoveInDate</th>
+      <th>MoveOutDate</th>
+      <th>Principal</th>
+      <th>Amount Due</th>
+      <th>Amount Remaining</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let placement of placements">
+      <td>{{ placement.ClientNumber }}</td>
+      <td>{{ placement.ManagementNumber }}</td>
+      <td>{{ placement.Community }}</td>
+      <td>{{ placement.FirstName }}</td>
+      <td>{{ placement.LastName }}</td>
+      <td>{{ placement.SSN }}</td>
+      <td>{{ placement.TenantCode }}</td>
+      <td>{{ placement.ListedDate }}</td>
+      <td>{{ placement.MoveInDate }}</td>
+      <td>{{ placement.MoveOutDate }}</td>
+      <td>{{ placement.Principal }}</td>
+      <td>{{ placement.amtdueclient }}</td>
+      <td>{{ placement.amtremaining }}</td>
+    </tr>
+  </tbody>
+</table>
+

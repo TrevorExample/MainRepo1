@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TOzBOPxzUa4wQDhhQG9ECOGtxPf9VYt05wZmZtbLnr+06A7OdSHqUTgAIwCKj3MS9xU2ZuHK/LyKTkfjKABbjQ==",
+  "dgSpecHash": "pwwt+haYR06xzglLKq2dwizZgzxxmPO+S5Lh8SuFOd54LPKttsYa3f2lINwk2x5CLCrErU9Pr6OYyemHNnFe8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mnguyen\\Downloads\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj",
+  "projectFilePath": "C:\\working2\\MainRepo1\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity\\ASPNETCoreUserIdentity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mnguyen\\.nuget\\packages\\libuv\\1.10.0\\libuv.1.10.0.nupkg.sha512",
     "C:\\Users\\mnguyen\\.nuget\\packages\\microsoft.applicationinsights\\2.4.0\\microsoft.applicationinsights.2.4.0.nupkg.sha512",
