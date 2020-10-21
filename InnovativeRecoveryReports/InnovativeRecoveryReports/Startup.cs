@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace InnovativeRecoveryReports
 {
@@ -33,12 +35,17 @@ namespace InnovativeRecoveryReports
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddDefaultTokenProviders()//man added
+                //.AddDefaultTokenProviders()//man added
+                .AddRoles<IdentityRole>()//man added
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            //       services.AddIdentity<IdentityUser, IdentityRole>()
+            //.AddEntityFrameworkStores<ApplicationDbContext>()
+            //.AddDefaultTokenProviders()
+            //.AddDefaultUI();// man added three lines
 
             services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(); //man commented
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
@@ -49,6 +56,15 @@ namespace InnovativeRecoveryReports
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            // man added
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("OnlyAdminAccess", policy => policy.RequireRole("Admin"));
+            //});
+            //man added
+          
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,7 +92,7 @@ namespace InnovativeRecoveryReports
             app.UseRouting();
 
             app.UseAuthentication();
-            app.UseIdentityServer();
+            app.UseIdentityServer();// man commented
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
@@ -105,29 +121,29 @@ namespace InnovativeRecoveryReports
 
         }
 
-        //private async Task CreateUserRoles(IServiceProvider serviceProvider)
-        //{
-        //    var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-        //    var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+        private async Task CreateUserRoles(IServiceProvider serviceProvider)
+        {
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
 
-        //    IdentityResult roleResult;
-        //    //Adding Addmin Role
-        //    var roleCheck = await RoleManager.RoleExistsAsync("Admin1");
-        //    if (!roleCheck)
-        //    {
-        //        //create the roles and seed them to the database
-        //        roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin1"));
-        //    }
-        //    try
-        //    {
-        //        //Asign Admin role to the main User here i have given my login id for Admin management
-        //        ApplicationUser user = await UserManager.FindByEmailAsync("mqn982@live.com");
-        //        var User = new ApplicationUser();
-        //        await UserManager.AddToRoleAsync(user, "Admin1");
-        //    }
-        //    catch (Exception e) { };
-        //}
+            IdentityResult roleResult;
+            //Adding Addmin Role
+            var roleCheck = await RoleManager.RoleExistsAsync("Admin");
+            if (!roleCheck)
+            {
+                //create the roles and seed them to the database
+                roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin"));
+            }
+            //try
+            //{
+                //Asign Admin role to the main User here i have given my login id for Admin management
+                ApplicationUser user = await UserManager.FindByEmailAsync("mqn982@live.com");
+                var User = new ApplicationUser();
+                await UserManager.AddToRoleAsync(user, "Admin");
+            //}
+            //catch (Exception e) { };
+        }
 
 
 

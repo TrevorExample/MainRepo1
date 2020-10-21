@@ -16,11 +16,17 @@ namespace InnovativeRecoveryReports.Models
         public string LastName { get; set; }
         public string SSN { get; set; }
         public string TenantCode { get; set; }
-        public DateTime ListedDate { get; set; }
-        public DateTime MoveInDate { get; set; }
-        public DateTime MoveOutDate { get; set; }
+        public DateTime? ListedDate { get; set; }
+        public DateTime? MoveInDate { get; set; }
+        public DateTime? MoveOutDate { get; set; }
         public Decimal Principal { get; set; }
         public Decimal amtdueclient { get; set; }
         public Decimal amtremaining { get; set; }
+        public int DaysLapsed => ListedDate.Value.Subtract(MoveOutDate.Value).Days;
+        //public int DaysLapsed => ListedDate.Subtract(MoveOutDate).Days;
+
+
+
     }
 }
+
