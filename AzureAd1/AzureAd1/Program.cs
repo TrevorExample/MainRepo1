@@ -42,9 +42,11 @@ namespace AzureAd1
                     }
                 }
 
-                PasswordProfile cat = new PasswordProfile();
-                cat.Password = "Orangea13!";
-                cat.ForceChangePasswordNextSignIn = false;
+                PasswordProfile pp = new PasswordProfile();
+                pp.Password = "Redwhiteblue13!";
+                pp.ForceChangePasswordNextSignIn = true;
+
+
                 User newUser = new User
                 {
                     Id = "mqn9822",
@@ -58,13 +60,24 @@ namespace AzureAd1
                     PreferredLanguage = "english",
                     //Surname = someUser.Surname,
                     //UserPrincipalName = someUser.UserPrincipalName
-                    PasswordProfile = cat
+                    PasswordProfile = pp
 
                 };
-                User createdUser = await graph.Users.Request().AddAsync(newUser);
+                //User createdUser = await graph.Users.Request().AddAsync(newUser);
 
+                Console.WriteLine("created user");
 
+                var invitation = new Invitation
+                {
+                    InvitedUserEmailAddress = "mqn982@gmail.com",
+                    InviteRedirectUrl = "https://localhost:44321/",
+                    SendInvitationMessage = true
+                };
 
+                await graph.Invitations
+                    .Request()
+                    .AddAsync(invitation);
+                Console.WriteLine("sent invite");
 
 
             }
